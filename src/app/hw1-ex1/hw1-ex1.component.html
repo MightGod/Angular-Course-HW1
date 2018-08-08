@@ -1,0 +1,23 @@
+<textarea disabled="true" rows="5" cols="102">
+  Create a component that have a text box, a button & a combobox (“select” tag). 
+  Entering a text to the text box and pressing the button will create a new option in the combobox.
+
+  Add a checkbox called “Bigger font”. Checking the checkbox will make the font in the combobox
+  to be more bigger. Unchecking it will returns it to the original size.</textarea>
+
+<p><input type="text" placeholder="Type some text" #inputtext [value]="text" (keyup)="text=inputtext.value"></p>
+
+<p *ngIf="text.length > 0">
+  <input type="submit" value="Add" (click)="addText(inputtext.value)">
+  <b>{{text}}</b> to the list.
+</p>
+
+<p *ngIf="texts.length > 0">
+  <select [style.font-size]="size">
+    <option *ngFor="let current of texts">{{current}}</option>
+  </select>
+
+  <label for="checkbox">Bigger font</label>
+  <input type="checkbox" #inputcheckbox id="checkbox" (change)="biggerFont(inputcheckbox.checked)">
+</p>
+

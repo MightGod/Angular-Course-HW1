@@ -1,0 +1,11 @@
+<p>Welcome to Homework 1! Please chose which solution you want to see:</p>
+<p>
+  <input type="radio" class="form-radio" name="exercises" id="ex1" #ex1 (change)="handleChange(ex1.id)"><label for="ex1">Solution for exercise 1</label>
+</p>
+<p>
+  <input type="radio" class="form-radio" name="exercises" id="ex2" #ex2 (change)="handleChange(ex2.id)"><label for="ex2">Solution for exercise 2</label>
+</p>
+
+<p *ngIf="exercise1"><app-hw1-ex1></app-hw1-ex1></p>
+<p *ngIf="exercise2"><app-hw1-ex2></app-hw1-ex2></p>
+

@@ -1,0 +1,30 @@
+<textarea disabled="true" rows="13" cols="102">
+    Create a class called Phone with the following data:
+    - Mobile number (string).
+    - Home number (string).
+    - Fax (string).
+
+    Create a class called Person with the following data:
+    - Name (string).
+    - Age (number).
+    - Phones (an array of Phone objects).
+    
+    Create a component that holds an array of 2 Person objects. Each Person object will contains
+    2 Phone objects (set the data as hardcoded).
+    Present each Person data as an item in a list</textarea>
+
+<p>List of persons:</p>
+<ol type="1">
+  <li *ngFor="let person of persons">
+    <p>Name: {{person.name}}</p>
+    <p>Age: {{person.age}}</p>
+    <p>Phones:</p>
+    <ul type="1">
+      <li *ngFor="let phone of person.phones">
+        <p>Mobile: {{phone.mobile}}</p>
+        <p>Home: {{phone.home}}</p>
+        <p>Fax: {{phone.fax}}</p>
+      </li>
+    </ul>
+  </li>
+</ol>
